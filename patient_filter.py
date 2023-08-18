@@ -6,11 +6,28 @@ class Patient:
         self.gender = gender
         self.primary_phone = primary_phone
 
-# Create a list of patient instances (more than 50 patients)
+# Create an array to store patient objects
 patients = [
-    Patient("John", "Robert", "Doe", "Male", "123-456-7890"),
-    Patient("Jane", "Marie", "Smith", "Female", "987-654-3210"),
-    # ... (add more patients here)
+    Patient("John", "Robert", "Doe", "Male", "1234567890"),
+    Patient("Jane", "Marie", "Smith", "Female", "9876543210"),
+    Patient("Michael", "David", "Williams", "Male", "6565564642"),
+    Patient("Emily", "Nicole", "Johnson", "Female", "65655562242"),
+    Patient("Daniel", "Joseph", "Martinez", "Male", "6345621879"),
+    Patient("Olivia", "Grace", "Taylor", "Female", "9871234560"),
+    Patient("Christopher", "Lee", "Davis", "Male", "5655555444"),
+    Patient("Ava", "Elizabeth", "Wilson", "Female", "7890123456"),
+    Patient("William", "Andrew", "Rodriguez", "Male", "4567890123"),
+    Patient("Sophia", "Ann", "Anderson", "Female", "9876543210"),
+    Patient("Matthew", "Ryan", "Garcia", "Male", "7894561230"),
+    Patient("Isabella", "Rose", "Moore", "Female", "1239874560"),
+    Patient("Ethan", "James", "Lee", "Male", "2345678901"),
+    Patient("Mia", "Lynn", "Thompson", "Female", "3456789012"),
+    Patient("Andrew", "William", "Clark", "Male", "4567890123"),
+    Patient("Charlotte", "Marie", "Turner", "Female", "5678901234"),
+    Patient("Benjamin", "Michael", "White", "Male", "6789012345"),
+    Patient("Lily", "Grace", "Robinson", "Female", "7890123456"),
+    Patient("Samuel", "Thomas", "Davis", "Male", "8901234567"),
+    Patient("Aria", "Emily", "Jackson", "Female", "9012345678")
 ]
 
 def filter_patients(patients):
@@ -32,7 +49,7 @@ def filter_patients(patients):
 
     return filtered_patients
 
-# Call the filter_patients function with the list of patient instances
+# Call the filter_patients function with the array of patient objects
 filtered_patients = filter_patients(patients)
 
 # Display filtered patients
@@ -42,3 +59,4 @@ if filtered_patients:
         print(f"{patient.first_name} {patient.family_name}: {patient.primary_phone}")
 else:
     print("No patients match the criteria.")
+
