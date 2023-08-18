@@ -1,3 +1,5 @@
+import json
+
 class Patient:
     def __init__(self, first_name, middle_name, family_name, gender, primary_phone):
         self.first_name = first_name
@@ -6,7 +8,6 @@ class Patient:
         self.gender = gender
         self.primary_phone = primary_phone
 
-# Create an array to store patient objects
 patients = [
     Patient("John", "Robert", "Doe", "Male", "1234567890"),
     Patient("Jane", "Marie", "Smith", "Female", "9876543210"),
@@ -38,6 +39,14 @@ def filter_patients(patients):
     family_name = input("Enter Family Name (or press Enter to skip): ")
     gender = input("Enter Gender (or press Enter to skip): ")
     primary_phone = input("Enter Primary Phone (or press Enter to skip): ")
+def filter_patients(patients):
+    filtered_patients = []
+
+    first_name = input("Enter First Name (or press Enter to skip): ")
+    middle_name = input("Enter Middle Name (or press Enter to skip): ")
+    family_name = input("Enter Family Name (or press Enter to skip): ")
+    gender = input("Enter Gender (or press Enter to skip): ")
+    primary_phone = input("Enter Primary Phone (or press Enter to skip): ")
 
     for patient in patients:
         if (not first_name or patient.first_name == first_name) and \
@@ -51,6 +60,13 @@ def filter_patients(patients):
 
 # Call the filter_patients function with the array of patient objects
 filtered_patients = filter_patients(patients)
+
+# Convert filtered patient objects to a JSON object
+filtered_patients_json = [patient.__dict__ for patient in filtered_patients]
+
+# Write the JSON object to a file
+with open("filtered_patients.json", "w") as json_file:
+    json.dump(filtered_patients_json, json_file, indent=4)
 
 # Display filtered patients
 if filtered_patients:
