@@ -39,14 +39,6 @@ def filter_patients(patients):
     family_name = input("Enter Family Name (or press Enter to skip): ")
     gender = input("Enter Gender (or press Enter to skip): ")
     primary_phone = input("Enter Primary Phone (or press Enter to skip): ")
-def filter_patients(patients):
-    filtered_patients = []
-
-    first_name = input("Enter First Name (or press Enter to skip): ")
-    middle_name = input("Enter Middle Name (or press Enter to skip): ")
-    family_name = input("Enter Family Name (or press Enter to skip): ")
-    gender = input("Enter Gender (or press Enter to skip): ")
-    primary_phone = input("Enter Primary Phone (or press Enter to skip): ")
 
     for patient in patients:
         if (not first_name or patient.first_name == first_name) and \
