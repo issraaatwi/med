@@ -1,4 +1,7 @@
-[
+import json
+
+# Create an array to store patient data as dictionaries
+patients = [
     {
         "first_name": "John",
         "middle_name": "Robert",
@@ -160,3 +163,33 @@
         "group": "Group E"
     }
 ]
+
+# Convert patient data (dictionaries) to a JSON object
+patients_json = patients
+
+# Write the JSON object to a file
+with open("patients.json", "w") as json_file:
+    json.dump(patients_json, json_file, indent=4)
+
+def filter_patients_by_group(patients, search_group):
+    filtered_patients = []
+
+    for patient in patients:
+        if patient.get("group") == search_group:
+            filtered_patients.append(patient)
+
+    return filtered_patients
+
+# Prompt user to search for a specific group
+search_group = input("Enter the group name to search for: ")
+
+# Call the filter_patients_by_group function
+group_patients = filter_patients_by_group(patients, search_group)
+
+# Display patients in the searched group
+if group_patients:
+    print(f"Patients in the '{search_group}' group:")
+    for patient in group_patients:
+        print(f"{patient['first_name']} {patient['family_name']}: {patient['primary_phone']}")
+else:
+    print(f"No patients found in the '{search_group}' group.")
